@@ -6,7 +6,7 @@
 
 Feature: Lesson 2 - Learn how to reuse your elements
 
-  # Imagine that in each of your scenarios you want to click on the same button
+  # Imagine, that in each of your scenarios you want to click on the same button
   # It can look like this:
   Scenario: I will not reuse 1
     When user navigates to www.somepage.com
