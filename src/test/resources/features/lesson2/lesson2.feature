@@ -55,4 +55,5 @@ Feature: Lesson 2 - Learn how to reuse your elements
   # In other words
   # element name === element identifier (can be id, css, xpath)
 
+  # Now, if the element attribute (xpath) changes, you only need to change it here, in this file.
   # Read more about this concept on the Lesson 2 wiki page

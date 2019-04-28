@@ -14,14 +14,14 @@ import java.util.Map;
 
 class BasicSteps  {
 
-    private WebDriver driver;
-    private Map<String, String> objects = new HashMap<>();
+    static WebDriver driver;
+    private final Map<String, String> objects = new HashMap<>();
 
     BasicSteps(){
         createBrowserInstance();
     }
 
-    void createBrowserInstance() {
+    static void createBrowserInstance() {
         driver = DriverInstance.getInstance().getDriver();
     }
 
