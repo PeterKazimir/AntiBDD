@@ -4,9 +4,9 @@
 
 # At the end of the Lesson 1, you will find a Challenge 1, I challenge you to try it :)
 
-Feature: Lesson 1
+Feature: Lesson 1 - Learn how to add basic commands
 
-  Scenario: Learn how to add basic commands
+  Scenario: Basic commands
     # Let's take a look at a list of basic commands
     # - they don't do anything, this is just a list
     # - you can use them with any keyword - Given, When, And, Then
