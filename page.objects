@@ -1,5 +1,0 @@
-googleLogo === id=hplogo
-inputField === xpath=//*[@class="gLFyf gsfi"]
-submitSearch === xpath=(//*[@name="btnK"])[2]
-googleResult === css=.LC20lb
-wikiH1 === id=firstHeading

@@ -26,7 +26,12 @@ class BasicSteps  {
     }
 
     void addObjectsFromFile(String fileName) throws IOException {
-        BufferedReader in = new BufferedReader(new FileReader(fileName));
+        BufferedReader in = new BufferedReader(
+                new FileReader(
+                        BasicSteps.class.getResource(fileName.startsWith("/") ? fileName : "/" + fileName)
+                        .getPath()
+                )
+        );
         String line;
         while ((line = in.readLine()) != null) {
             String[] parts = line.split("===");

@@ -2,7 +2,7 @@
 Feature: Google search
 
   Background:
-    Given use page.objects
+    Given use elements/page.objects
 
   Scenario: Search test automation
     When user navigates to www.google.com
