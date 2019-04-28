@@ -10,7 +10,7 @@ Feature: Google search
     And clicks element submitSearch
     And clicks first element googleResult
     Then element wikiH1 contains text Test automation
-    And waits 2
+    And waits 2 seconds
 
   Scenario: Search zurich airport
     When user navigates to http://www.google.com
@@ -19,14 +19,14 @@ Feature: Google search
     And clicks element submitSearch
     And clicks first element googleResult
     Then element id=flight-plan is displayed
-    And waits 2
+    And waits 2 seconds
 
   Scenario Outline: Parameterized search
     When user navigates to www.google.com
     And enters text <textToEnter> to inputField
     And clicks element submitSearch
     Then element googleResult contains text <textToEnter>
-    And waits 5
+    And waits 2 seconds
     Examples:
     | textToEnter |
     | pandas      |

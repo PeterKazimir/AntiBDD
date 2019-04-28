@@ -1,4 +1,4 @@
-package com.antibdd.steps;
+package com.antibdd.steps.steps_for_lessons;
 
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;

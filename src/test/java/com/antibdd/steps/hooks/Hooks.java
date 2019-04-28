@@ -1,4 +1,4 @@
-package com.antibdd.steps;
+package com.antibdd.steps.hooks;
 
 import cucumber.api.Scenario;
 import cucumber.api.java.AfterStep;
@@ -6,7 +6,7 @@ import cucumber.api.java.Before;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 
-import static com.antibdd.steps.BasicSteps.*;
+import static com.antibdd.steps.actions.BasicActions.*;
 
 public class Hooks {
 
