@@ -1,5 +1,6 @@
 package com.antibdd.steps;
 
+import com.antibdd.steps.actions.BasicActions;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -7,7 +8,7 @@ import cucumber.api.java.en.When;
 
 import java.io.IOException;
 
-public class StepDefs extends BasicSteps{
+public class StepDefs extends BasicActions {
 
     @Given("^use (.+)$")
     public void getObjects(String fileName) throws IOException {
@@ -34,7 +35,7 @@ public class StepDefs extends BasicSteps{
         clickFirstElement(locator);
     }
 
-    @And("^waits (\\d+)$")
+    @And("^waits (\\d+) seconds$")
     public void andWait(int time) {
         waitForTime(time);
     }

@@ -1,4 +1,4 @@
-package com.antibdd.steps;
+package com.antibdd.steps.actions;
 
 import com.antibdd.driver.DriverInstance;
 import org.apache.commons.lang3.StringUtils;
@@ -12,21 +12,26 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
-class BasicSteps  {
+public class BasicActions {
 
-    private WebDriver driver;
-    private Map<String, String> objects = new HashMap<>();
+    public static WebDriver driver;
+    private final Map<String, String> objects = new HashMap<>();
 
-    BasicSteps(){
+    public BasicActions(){
         createBrowserInstance();
     }
 
-    void createBrowserInstance() {
+    public static void createBrowserInstance() {
         driver = DriverInstance.getInstance().getDriver();
     }
 
-    void addObjectsFromFile(String fileName) throws IOException {
-        BufferedReader in = new BufferedReader(new FileReader(fileName));
+    public void addObjectsFromFile(String fileName) throws IOException {
+        BufferedReader in = new BufferedReader(
+                new FileReader(
+                        BasicActions.class.getResource(fileName.startsWith("/") ? fileName : "/" + fileName)
+                        .getPath()
+                )
+        );
         String line;
         while ((line = in.readLine()) != null) {
             String[] parts = line.split("===");
@@ -35,11 +40,14 @@ class BasicSteps  {
         in.close();
     }
 
-    void navigateToUrl(String url) {
+    public void navigateToUrl(String url) {
+        if(!url.startsWith("http")) {
+            url = "http://" + url;
+        }
         driver.get(url);
     }
 
-    void verifyElementIsDisplayed(String locator) {
+    public void verifyElementIsDisplayed(String locator) {
         String locatorFromObjects = objects.get(locator);
         if(!StringUtils.isBlank(locatorFromObjects)){
             Assert.assertTrue(driver.findElement(getBy(locatorFromObjects)).isDisplayed());
@@ -48,16 +56,24 @@ class BasicSteps  {
         }
     }
 
-    void verifyElementHasText(String locator, String textToFind) {
+    public void verifyElementHasText(String locator, String textToFind) {
         String locatorFromObjects = objects.get(locator);
         if(!StringUtils.isBlank(locatorFromObjects)){
-            Assert.assertTrue(driver.findElement(getBy(locatorFromObjects)).getText().contains(textToFind));
+            Assert.assertTrue(
+                    driver.findElement(getBy(locatorFromObjects))
+                            .getText().toLowerCase()
+                            .contains(textToFind.toLowerCase())
+            );
         } else {
-            Assert.assertTrue(driver.findElement(getBy(locator)).getText().contains(textToFind));
+            Assert.assertTrue(
+                    driver.findElement(getBy(locator))
+                            .getText().toLowerCase()
+                            .contains(textToFind.toLowerCase())
+            );
         }
     }
 
-    void enterText(String textToEnter, String locator) {
+    public void enterText(String textToEnter, String locator) {
         String locatorFromObjects = objects.get(locator);
         if(!StringUtils.isBlank(locatorFromObjects)){
             driver.findElement(getBy(locatorFromObjects)).sendKeys(textToEnter);
@@ -66,7 +82,7 @@ class BasicSteps  {
         }
     }
 
-    void clickFirstElement(String locator) {
+    public void clickFirstElement(String locator) {
         String locatorFromObjects = objects.get(locator);
         if(!StringUtils.isBlank(locatorFromObjects)){
             driver.findElements(getBy(locatorFromObjects)).get(0).click();
@@ -75,7 +91,7 @@ class BasicSteps  {
         }
     }
 
-    void clickElement(String locator) {
+    public void clickElement(String locator) {
         String locatorFromObjects = objects.get(locator);
         if(StringUtils.isBlank(locatorFromObjects)){
             driver.findElement(getBy(locator)).click();
@@ -101,7 +117,7 @@ class BasicSteps  {
         return by;
     }
 
-    void waitForTime(int time) {
+    public void waitForTime(int time) {
         try {
             Thread.sleep(time * 1000);
         } catch (InterruptedException e) {
