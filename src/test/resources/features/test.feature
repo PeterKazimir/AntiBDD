@@ -5,7 +5,7 @@ Feature: Google search
     Given use page.objects
 
   Scenario: Search test automation
-    When user navigates to http://www.google.com
+    When user navigates to www.google.com
     And enters text test automation to inputField
     And clicks element submitSearch
     And clicks first element googleResult

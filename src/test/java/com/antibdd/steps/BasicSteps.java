@@ -36,6 +36,9 @@ class BasicSteps  {
     }
 
     void navigateToUrl(String url) {
+        if(!url.startsWith("http")) {
+            url = "http://" + url;
+        }
         driver.get(url);
     }
 
