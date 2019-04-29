@@ -97,11 +97,13 @@ Now it is a good time to learn how to reuse the elements. Jump into **Lesson 2**
 
 The AntiBDD project has a reuse mechanism, which they can use while **still not writing any code!**
 
+
 > Now, they have got a taste of what it is like to automate tests.
 
 > They have bunch of them and like to watch them execute without touching the mouse.
 
 > And then they like to look at the report for a while.
+
 
 Boom! **Lesson 3** will meet them with the ultimate challenge.
 
