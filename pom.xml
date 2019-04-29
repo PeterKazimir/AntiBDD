@@ -6,7 +6,7 @@
 
     <groupId>com.kazimir.peter</groupId>
     <artifactId>antibdd</artifactId>
-    <version>1.1-RELEASE</version>
+    <version>1.2-RELEASE</version>
     <packaging>jar</packaging>
 
     <dependencies>
