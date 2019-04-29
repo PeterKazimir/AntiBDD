@@ -142,5 +142,7 @@ Ok, the advertisment is over. If you got this far, you want this!
 
 Go to this link, it will explain the [setup]!
 
+Meet me at Lesson 1.
+
 [screenshots]: <https://github.com/PeterKazimir/AntiBDD/wiki/Screenshots-from-the-project>
 [setup]: <https://github.com/PeterKazimir/AntiBDD/wiki>
