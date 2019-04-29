@@ -70,7 +70,7 @@ The tests will execute in Chrome and you will get a nice report as a result!
 
 You can find more information, with images from project on [screenshots] website.
 
-Don't know where to start? **Lesson 1** that comes with this project will guide you through your first baby steps!
+Don't know where to start? **Lesson 1** (which comes with this project) will guide you through your first baby steps!
 
 You will learn the basic building blocks (commands) and how to identify elements on web with id, css or xpath.
 
